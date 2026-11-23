@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the paper below."
+title: "LRIP: Learning Rate Informed Priors for Neural Network Calibration"
+type: software
+authors:
+  - family-names: Fall
+    given-names: Mouhamadou Makhtar
+  - family-names: Ainouz
+    given-names: Samia
+  - family-names: Lapray
+    given-names: Pierre-Jean
+  - family-names: Tarel
+    given-names: Jean-Philippe
+license: MIT
+preferred-citation:
+  type: conference-paper
+  title: "Learning Rate Informed Priors for Neural Network Calibration"
+  authors:
+    - family-names: Fall
+      given-names: Mouhamadou Makhtar
+    - family-names: Ainouz
+      given-names: Samia
+    - family-names: Lapray
+      given-names: Pierre-Jean
+    - family-names: Tarel
+      given-names: Jean-Philippe
+  conference:
+    name: "International Conference on Pattern Recognition (ICPR)"
+  year: 2026

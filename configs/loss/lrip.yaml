@@ -1,0 +1,20 @@
+# Learning Rate Informed Priors:  (1 - eps) * CE + eps * KL(u_LR || p)
+name: lrip
+epsilon: 0.1
+ignore_index: -100      # use 255 for segmentation (VOC)
+
+# Epoch t* after which the priors are recorded. null = LR peak, read from the
+# scheduler: first milestone (multi_step / step) or pct_start * max_epoch (one_cycle).
+# Set it explicitly for the second-decay ablation (SD), e.g. 100 on CIFAR-10.
+snapshot_epoch: null
+# View of the training images used for the snapshot (classification only):
+#   train : training transform, as in the paper's experiments
+#   eval  : deterministic evaluation transform
+snapshot_view: train
+# Segmentation: prior maps are stored at 1/prior_stride resolution (float16).
+prior_stride: 8
+
+object:
+  _target_: calibrate.losses.LRIPLoss
+  epsilon: ${loss.epsilon}
+  ignore_index: ${loss.ignore_index}
